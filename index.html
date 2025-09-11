@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atamert Peker - Mobile Developer & Marketing Graduate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #22d3ee;
+            --dark: #0f172a;
+            --dark-lighter: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --accent: #f97316;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--dark-lighter);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(30, 41, 59, 0.5);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            background: radial-gradient(ellipse at top, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
+        }
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            animation: fadeInUp 1s ease;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #f1f5f9 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+        .hero-description {
+            max-width: 800px;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+        /* Contact Info */
+        .contact-info {
+            display: flex;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .contact-item:hover {
+            color: var(--primary);
+        }
+        /* Section Base */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        /* Experience Section */
+        .experience-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+        .experience-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 2rem;
+            animation: fadeInLeft 0.6s ease;
+        }
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--dark), 0 0 0 6px var(--primary);
+        }
+        .experience-header {
+            margin-bottom: 1rem;
+        }
+        .experience-title {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        .experience-company {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        .experience-meta {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        .experience-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        .experience-description ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+        .experience-description li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .experience-description li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .project-card {
+            background: var(--dark-lighter);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(99, 102, 241, 0.1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover::before {
+            transform: scaleX(1);
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+            border-color: var(--primary);
+        }
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        .project-title {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        .project-subtitle {
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+        .project-year {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            background: rgba(99, 102, 241, 0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+        .project-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            flex-grow: 1;
+        }
+        .project-description ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+        .project-description li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .project-description li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+        }
+        .project-stats {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        .stat {
+            display: flex;
+            flex-direction: column;
+        }
+        .stat-value {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        /* Skills Section */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            text-align: center;
+        }
+        .skill-category {
+            background: var(--dark-lighter);
+            padding: 2rem;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid rgba(99, 102, 241, 0.1);
+        }
+        .skill-category h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .skill-item {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--text-primary);
+            padding: 0.5rem 1.25rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            background: var(--dark-lighter);
+            border-top: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        .footer-text {
+            color: var(--text-secondary);
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Simple hiding for mobile, can be replaced with a hamburger menu */
+            }
+            .hero-content, section {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Atamert Peker</a>
+            <ul class="nav-links">
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Atamert Peker</h1>
+                <p class="subtitle">Computer Engineering & MSc Marketing Graduate</p>
+                <p class="hero-description">
+                    A technical and creative professional combining expertise in React Native, iOS/Swift, JavaScript, and Python with strengths in marketing, communication, and analytics. Experienced in building and scaling apps for tens of thousands of users while researching how storytelling, consumer behaviour, and digital strategy shape loyalty. With strong AI and analytics expertise, I turn complex tech into solutions that enhance experience, engagement, and growth.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="mailto:atamertpeker@me.com" class="btn btn-secondary">Get In Touch</a>
+                </div>
+                <div class="contact-info">
+                    <a href="mailto:atamertpeker@me.com" class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <span>atamertpeker@me.com</span>
+                    </a>
+                    <a href="https://linkedin.com/in/atamert-peker" target="_blank" class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        <span>linkedin.com/in/atamert-peker</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3 class="experience-title">React Native Developer</h3>
+                        <p class="experience-company">Anadolu Sigorta</p>
+                        <p class="experience-meta">2022 - 2024 | Istanbul, Turkey</p>
+                    </div>
+                    <div class="experience-description">
+                        <ul>
+                            <li>Developed and maintained two mobile apps, delivering policy purchase/management, hospital booking, real-time updates, and over 10 REST API integrations.</li>
+                            <li>Optimised UI/UX & performance to reduce booking times and improve accessibility, serving 50k+ customers.</li>
+                            <li>Led iterative delivery in Agile/Scrum squads; enforced Git/CI/CD and code reviews to maintain cross-platform consistency.</li>
+                            <li>Reduced service calls across apps used by 100k+ policyholders.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3 class="experience-title">iOS Developer</h3>
+                        <p class="experience-company">Anadolu Sigorta</p>
+                        <p class="experience-meta">2021 - 2022 | Istanbul, Turkey</p>
+                    </div>
+                    <div class="experience-description">
+                        <ul>
+                            <li>Built and launched the 'Biz Bize' corporate communications iOS app for 5k+ employees, featuring event notifications, meeting reservations, and departmental collaboration.</li>
+                            <li>Optimised UI/UX and performance to significantly lift daily active users.</li>
+                            <li>Partnered with a team of 5+ developers, ensuring compliance with Apple guidelines and implementing Git-based workflows to improve code quality.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="section-title">Portfolio Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <h3 class="project-title">Sagligim Cepte</h3>
+                            <p class="project-subtitle">React Native Health Insurance App</p>
+                        </div>
+                        <span class="project-year">2024</span>
+                    </div>
+                    <div class="project-description">
+                        <ul>
+                            <li>Rebuilt the React.js front end, enabling policy purchase and hospital booking via 10+ API integrations.</li>
+                            <li>Delivered a full revamp in 4 months within a 20-member Agile team.</li>
+                            <li>Ensured seamless backend integration, strengthening digital adoption across web and mobile ecosystems.</li>
+                        </ul>
+                    </div>
+                    <div class="project-stats">
+                        <div class="stat">
+                            <span class="stat-value">25%</span>
+                            <span class="stat-label">Booking Time Reduction</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">20</span>
+                            <span class="stat-label">Team Members</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">4</span>
+                            <span class="stat-label">Months Delivery</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <h3 class="project-title">Juno</h3>
+                            <p class="project-subtitle">Cross-Platform Insurance App</p>
+                        </div>
+                        <span class="project-year">2023-2024</span>
+                    </div>
+                    <div class="project-description">
+                        <ul>
+                            <li>Coded and deployed a cross-platform app for health, auto, pet, and device policies.</li>
+                            <li>Implemented UI components for policy purchase, management, and real-time updates.</li>
+                            <li>Collaborated in a 10-member Agile team to deliver scalable features and maintain performance.</li>
+                        </ul>
+                    </div>
+                    <div class="project-stats">
+                        <div class="stat">
+                            <span class="stat-value">80%</span>
+                            <span class="stat-label">User Satisfaction</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">35%</span>
+                            <span class="stat-label">Accessibility Increase</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">50k+</span>
+                            <span class="stat-label">Customers</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <h3 class="project-title">Biz Bize</h3>
+                            <p class="project-subtitle">iOS Corporate Communication App</p>
+                        </div>
+                        <span class="project-year">2021-2022</span>
+                    </div>
+                    <div class="project-description">
+                        <ul>
+                            <li>Built an iOS app for 5k+ employees, enabling event notifications and meeting reservations.</li>
+                            <li>Designed scalable architecture and intuitive workflows to improve adoption and long-term usability.</li>
+                            <li>Applied Agile practices and Git-based workflows, gaining experience in the mobile development lifecycle.</li>
+                        </ul>
+                    </div>
+                    <div class="project-stats">
+                        <div class="stat">
+                            <span class="stat-value">25%</span>
+                            <span class="stat-label">Daily Usage Increase</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">5k+</span>
+                            <span class="stat-label">Employees</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <h3 class="project-title">SBM In Action</h3>
+                            <p class="project-subtitle">Digital Industry Consulting Project</p>
+                        </div>
+                        <span class="project-year">2025</span>
+                    </div>
+                    <div class="project-description">
+                        <ul>
+                            <li>Served as Consultant and Team Lead for a US-based client, delivering an in-depth industry report.</li>
+                            <li>Managed all client communications, feedback, and deliverables to ensure business alignment.</li>
+                            <li>Directed a student team, overseeing project planning, research, and on-time delivery.</li>
+                        </ul>
+                    </div>
+                     <div class="project-stats">
+                        <div class="stat">
+                            <span class="stat-value">Lead</span>
+                            <span class="stat-label">Role</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">US Client</span>
+                            <span class="stat-label">Market</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">Core Competencies</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Technical Skills</h3>
+                    <div class="skills-list">
+                        <span class="skill-item">React Native</span>
+                        <span class="skill-item">iOS / Swift</span>
+                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">REST APIs</span>
+                        <span class="skill-item">Git / CI/CD</span>
+                        <span class="skill-item">UI/UX Optimization</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Marketing & Strategy</h3>
+                    <div class="skills-list">
+                        <span class="skill-item">Digital Strategy</span>
+                        <span class="skill-item">Consumer Behaviour</span>
+                        <span class="skill-item">Analytics</span>
+                        <span class="skill-item">AI in Marketing</span>
+                        <span class="skill-item">Agile / Scrum</span>
+                        <span class="skill-item">Project Management</span>
+                        <span class="skill-item">Client Engagement</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-text">&copy; 2025 Atamert Peker. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
