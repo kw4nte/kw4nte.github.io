@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atamert Peker - Business & Technology | Strategy | Digital Transformation</title>
+    <title>Atamert Peker - Software Engineer | Architecture | Strategy</title>
     <style>
         * {
             margin: 0;
@@ -156,6 +156,16 @@
         .experience-description li { position: relative; padding-left: 1.5rem; margin-bottom: 0.75rem; }
         .experience-description li::before { content: '▸'; position: absolute; left: 0; color: var(--primary); }
 
+        /* Education Section */
+        .education-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+        .education-card { background: var(--dark-lighter); border-radius: 12px; padding: 2rem; transition: all 0.3s ease; border: 1px solid rgba(0,0,0, 0.1); position: relative; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .education-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--gradient); transform: scaleX(0); transition: transform 0.3s ease; }
+        .education-card:hover::before { transform: scaleX(1); }
+        .education-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0, 0.1); border-color: var(--primary); }
+        .education-degree { font-size: 1.3rem; color: var(--text-primary); margin-bottom: 0.5rem; font-weight: 600; }
+        .education-school { color: var(--primary); font-weight: 600; margin-bottom: 0.25rem; }
+        .education-meta { color: var(--text-secondary); font-size: 0.9rem; }
+
         /* Projects & Certificates Grid */
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 3rem; }
         .project-card { background: var(--dark-lighter); border-radius: 12px; padding: 2rem; transition: all 0.3s ease; border: 1px solid rgba(0,0,0, 0.1); position: relative; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
@@ -178,7 +188,7 @@
 
         /* Skills Section */
         .skills-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; text-align: center; }
-        .skill-category { background: var(--dark-lighter); padding: 2rem; border-radius: 12px; width: 100%; max-width: 400px; border: 1px solid rgba(0,0,0, 0.1); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .skill-category { background: var(--dark-lighter); padding: 2rem; border-radius: 12px; width: 100%; max-width: 350px; border: 1px solid rgba(0,0,0, 0.1); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
         .skill-category h3 { font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--primary); }
         .skills-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
         .skill-item { background: rgba(1, 40, 79, 0.1); color: var(--text-secondary); padding: 0.5rem 1.25rem; border-radius: 20px; font-weight: 500; }
@@ -215,6 +225,7 @@
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#certificates">Certificates</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -228,8 +239,8 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>Atamert Peker</h1>
-            <p class="subtitle">Business & Technology | Strategy | Digital Transformation</p>
-            <p class="hero-description">Business-oriented Computer Engineering and MSc Marketing graduate from Queen Mary University of London, positioned at the intersection of technology, strategy, and commercial decision-making. Experienced in delivering digital products and consulting-style projects within large corporate and regulated environments, translating complex data, systems, and user needs into measurable business outcomes.</p>
+            <p class="subtitle">Software Engineer | Architecture | Strategy</p>
+            <p class="hero-description">Solutions-oriented Software Engineer with a BSc in Computer Engineering and MSc in Marketing, combining deep technical expertise with strategic business acumen. Experienced in designing and delivering end-to-end system architectures across mobile, cloud, and API-driven platforms, with a focus on scalability, integration patterns, and digital transformation. Skilled in cross-functional stakeholder engagement, translating complex technical concepts for non-technical audiences, and driving technology strategy across multiple concurrent projects.</p>
             <div class="hero-buttons">
                 <a href="Atamert Peker CV copy.pdf" download class="btn btn-primary">Download CV</a>
                 <a href="https://calendar.app.google/yj7taM5CFCUgVU5i8" target="_blank" class="btn btn-secondary">Schedule a Meeting</a>
@@ -252,15 +263,15 @@
     </section>
 
     <section id="about">
-        <h2 class="section-title">My Story: From Code to Customer</h2>
+        <h2 class="section-title">From Code to Architecture</h2>
         <div class="about-grid">
             <div class="about-card photo-card">
                 <img src="Facetune_23-08-2025-20-09-17.jpeg" alt="Atamert Peker" class="about-photo">
             </div>
             <div class="about-card text-card">
                 <div class="about-content">
-                    <p>After earning a degree in Computer Engineering and building mobile apps for large user bases at Anadolu Insurance Company, I noticed that technically strong products often failed to scale because they lacked strategic marketing and consumer insight. I pursued an MSc in Marketing at Queen Mary University of London to bridge this gap, aligning technology with customer behaviour, storytelling, and data-driven growth.</p>
-                    <p>I bring a partner mindset to cross-functional teams by combining analytical rigour, stakeholder communication, and execution discipline to support growth, efficiency, and customer engagement across enterprise organisations.</p>
+                    <p>With a BSc in Computer Engineering and hands-on experience building production-grade mobile platforms at Anadolu Insurance Company, I developed a deep understanding of system architecture, API integration, and scalable software delivery. Recognising that great technology must be aligned with business strategy, I pursued an MSc in Marketing at Queen Mary University of London — bridging the gap between technical execution and commercial decision-making.</p>
+                    <p>Today, I design and deliver end-to-end architectures across mobile, cloud, and AI-driven platforms while aligning architecture decisions with business objectives. I bring a partner mindset to cross-functional teams, translating complex technical concepts for non-technical stakeholders and driving technology strategy that supports growth, efficiency, and digital transformation.</p>
                 </div>
             </div>
         </div>
@@ -277,8 +288,8 @@
                 </div>
                 <div class="experience-description">
                     <ul>
-                        <li>Improved digital customer journeys and service efficiency by delivering and optimising two production React Native applications with 10+ REST API integrations, serving 50k+ active users.</li>
-                        <li>Strengthened cross-functional alignment and informed product decisions by structuring business requirements, prioritising features, and supporting stakeholder decision-making through Agile delivery.</li>
+                        <li>Accomplished scalable, production-grade mobile insurance platforms, as measured by reliable daily usage across 50k+ active users, by developing and maintaining two React Native applications with modular components, reusable UI patterns, and 10+ REST API integrations.</li>
+                        <li>Accomplished improved application performance and cross-platform consistency, as measured by reduced UI friction and lower support dependency, by optimising rendering behaviour, collaborating in Agile squads, and enforcing Git-based workflows, CI/CD, and structured code reviews.</li>
                     </ul>
                 </div>
             </div>
@@ -291,58 +302,75 @@
                 </div>
                 <div class="experience-description">
                     <ul>
-                        <li>Built and launched the Biz Bize iOS application, increasing daily usage across 5k+ employees and supporting digital adoption initiatives aligned with internal communications objectives.</li>
-                        <li>Improved delivery reliability and code quality through structured Swift development practices, Git-based version control, and disciplined release processes within a 5+ developer team.</li>
+                        <li>Accomplished successful launch of a corporate iOS application for 5k+ employees, as measured by stable production performance and ongoing daily usage, by building features in Swift supporting notifications, meeting reservations, and internal collaboration workflows.</li>
+                        <li>Accomplished reliable releases and strong code quality, as measured by App Store compliance and low post-release issues, by applying MVVM-aligned design, disciplined version control, and coordinated release processes within a 5+ developer team.</li>
                     </ul>
                 </div>
             </div>
 
             <div class="experience-item">
                 <div class="experience-header">
-                    <h3 class="experience-title">Consulting Project Lead</h3>
+                    <h3 class="experience-title">Technical Project Lead</h3>
                     <p class="experience-company">SBM In Action: Digital Industry Project</p>
                     <p class="experience-meta">2025 | London, United Kingdom</p>
                 </div>
                 <div class="experience-description">
                     <ul>
-                        <li>Provided clear strategic direction for a US-based client by conducting structured market and competitive analysis, synthesising qualitative and quantitative data, and translating findings into actionable business insights.</li>
-                        <li>Achieved effective stakeholder alignment and on-time delivery by structuring client communications, synthesising research, and coordinating team outputs into an executive-ready report.</li>
+                        <li>Accomplished clear strategic direction for a US-based client, as measured by executive acceptance of final recommendations, by conducting structured market and competitive analysis, synthesising qualitative and quantitative data, and translating findings into actionable business insights and strategic recommendations.</li>
+                        <li>Accomplished effective stakeholder alignment and on-time delivery, as measured by positive client feedback and scope adherence, by structuring client communications, synthesising qualitative and quantitative research, and coordinating team outputs into an executive-ready report.</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+        <div class="education-grid">
+            <div class="education-card">
+                <h3 class="education-degree">Masters of Science, Marketing</h3>
+                <p class="education-school">Queen Mary University of London</p>
+                <p class="education-meta">2024 – 2025 | London, UK</p>
+            </div>
+            <div class="education-card">
+                <h3 class="education-degree">Bachelor of Science, Computer Engineering</h3>
+                <p class="education-school">Bahcesehir University</p>
+                <p class="education-meta">2018 – 2022 | Istanbul, Turkey</p>
+            </div>
+        </div>
+    </section>
+
     <section id="projects">
-        <h2 class="section-title">Portfolio Projects</h2>
+        <h2 class="section-title">Projects</h2>
         <div class="projects-grid">
             <div class="project-card">
                 <div class="project-header">
                     <div>
-                        <h3 class="project-title">Sagligim Cepte</h3>
-                        <p class="project-subtitle">React Native Health Insurance App</p>
+                        <h3 class="project-title">ARORI</h3>
+                        <p class="project-subtitle">AI-Powered Mobile Application</p>
                     </div>
-                    <span class="project-year">2024</span>
+                    <span class="project-year">08/2025</span>
                 </div>
                 <div class="project-description">
                     <ul>
-                        <li>Rebuilt the React.js front end, enabling policy purchase and hospital booking via 10+ API integrations.</li>
-                        <li>Delivered a full revamp in 4 months within a 20-member Agile team.</li>
-                        <li>Ensured seamless backend integration, strengthening digital adoption across web and mobile ecosystems.</li>
+                        <li>Designed and architected a scalable, multi-tier mobile platform using React Native (TypeScript), Express.js, Supabase (PostgreSQL), and Google Gemini AI.</li>
+                        <li>Established integration patterns across APIs, relational databases, and AI services, ensuring modularity, loose coupling, and horizontal scalability.</li>
+                        <li>Developed a structured database schema supporting real-time data synchronisation and event-driven processing pipelines.</li>
+                        <li>Created a roadmap for iterative feature delivery, aligning architecture decisions with user requirements and long-term platform extensibility.</li>
                     </ul>
                 </div>
                 <div class="project-stats">
                     <div class="stat">
-                        <span class="stat-value">25%</span>
-                        <span class="stat-label">Booking Time Reduction</span>
+                        <span class="stat-value">React Native</span>
+                        <span class="stat-label">Frontend</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-value">20</span>
-                        <span class="stat-label">Team Members</span>
+                        <span class="stat-value">Supabase</span>
+                        <span class="stat-label">Backend</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-value">4</span>
-                        <span class="stat-label">Months Delivery</span>
+                        <span class="stat-value">Gemini AI</span>
+                        <span class="stat-label">AI Engine</span>
                     </div>
                 </div>
             </div>
@@ -350,30 +378,30 @@
             <div class="project-card">
                 <div class="project-header">
                     <div>
-                        <h3 class="project-title">Juno</h3>
-                        <p class="project-subtitle">Cross-Platform Insurance App</p>
+                        <h3 class="project-title">OpenClaw</h3>
+                        <p class="project-subtitle">Autonomous Prediction Market Trading Agent</p>
                     </div>
-                    <span class="project-year">2023-2024</span>
+                    <span class="project-year">02/2026</span>
                 </div>
                 <div class="project-description">
                     <ul>
-                        <li>Coded and deployed a cross-platform app for health, auto, pet, and device policies.</li>
-                        <li>Implemented UI components for policy purchase, management, and real-time updates.</li>
-                        <li>Collaborated in a 10-member Agile team to deliver scalable features and maintain performance.</li>
+                        <li>Architected and deployed a cloud-native autonomous agent system on Google Cloud Platform, designing a microservice-based architecture integrating Python backend services with the Claude LLM API.</li>
+                        <li>Defined the system integration strategy across multiple external data sources, establishing API contracts, data transformation layers, and fault-tolerant processing pipelines.</li>
+                        <li>Developed comprehensive observability architecture including structured logging, health checks, and performance dashboards to ensure system reliability.</li>
                     </ul>
                 </div>
                 <div class="project-stats">
                     <div class="stat">
-                        <span class="stat-value">80%</span>
-                        <span class="stat-label">User Satisfaction</span>
+                        <span class="stat-value">GCP</span>
+                        <span class="stat-label">Cloud</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-value">35%</span>
-                        <span class="stat-label">Accessibility Increase</span>
+                        <span class="stat-value">Python</span>
+                        <span class="stat-label">Backend</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-value">50k+</span>
-                        <span class="stat-label">Customers</span>
+                        <span class="stat-value">Claude API</span>
+                        <span class="stat-label">AI Engine</span>
                     </div>
                 </div>
             </div>
@@ -381,53 +409,31 @@
             <div class="project-card">
                 <div class="project-header">
                     <div>
-                        <h3 class="project-title">Biz Bize</h3>
-                        <p class="project-subtitle">iOS Corporate Communication App</p>
+                        <h3 class="project-title">AI Receptionist</h3>
+                        <p class="project-subtitle">Voice AI Call Handling System</p>
                     </div>
-                    <span class="project-year">2021-2022</span>
+                    <span class="project-year">10/2025</span>
                 </div>
                 <div class="project-description">
                     <ul>
-                        <li>Built an iOS app for 5k+ employees, enabling event notifications and meeting reservations.</li>
-                        <li>Designed scalable architecture and intuitive workflows to improve adoption and long-term usability.</li>
-                        <li>Applied Agile practices and Git-based workflows, gaining experience in the mobile development lifecycle.</li>
+                        <li>Designed a multi-service integration architecture connecting ElevenLabs (voice synthesis), Vapi (conversational AI), and Twilio (telephony) APIs into a unified, event-driven voice processing platform.</li>
+                        <li>Architected workflow automation pipelines using n8n to orchestrate data flows between services, implementing decoupled message-passing patterns for resilience.</li>
+                        <li>Defined the system's scalability strategy to support 24/7 autonomous operation with zero-downtime deployment capabilities.</li>
+                        <li>Established cross-service error handling, structured logging, and monitoring frameworks to ensure end-to-end system observability.</li>
                     </ul>
                 </div>
                 <div class="project-stats">
                     <div class="stat">
-                        <span class="stat-value">25%</span>
-                        <span class="stat-label">Daily Usage Increase</span>
+                        <span class="stat-value">ElevenLabs</span>
+                        <span class="stat-label">Voice AI</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-value">5k+</span>
-                        <span class="stat-label">Employees</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-header">
-                    <div>
-                        <h3 class="project-title">SBM In Action</h3>
-                        <p class="project-subtitle">Digital Industry Consulting Project</p>
-                    </div>
-                    <span class="project-year">2025</span>
-                </div>
-                <div class="project-description">
-                    <ul>
-                        <li>Served as Consultant and Team Lead for a US-based client, delivering an in-depth industry report.</li>
-                        <li>Managed all client communications, feedback, and deliverables to ensure business alignment.</li>
-                        <li>Directed a student team, overseeing project planning, research, and on-time delivery.</li>
-                    </ul>
-                </div>
-                <div class="project-stats">
-                    <div class="stat">
-                        <span class="stat-value">Lead</span>
-                        <span class="stat-label">Role</span>
+                        <span class="stat-value">Twilio</span>
+                        <span class="stat-label">Telephony</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-value">US Client</span>
-                        <span class="stat-label">Market</span>
+                        <span class="stat-value">n8n</span>
+                        <span class="stat-label">Automation</span>
                     </div>
                 </div>
             </div>
@@ -448,33 +454,49 @@
     </section>
 
     <section id="skills">
-        <h2 class="section-title">Core Competencies</h2>
+        <h2 class="section-title">Technical Skills</h2>
         <div class="skills-container">
             <div class="skill-category">
-                <h3>Professional Skills</h3>
+                <h3>Software Engineering & Architecture</h3>
                 <div class="skills-list">
-                    <span class="skill-item">Business Analysis</span>
-                    <span class="skill-item">Strategy Support</span>
-                    <span class="skill-item">Management Consulting</span>
-                    <span class="skill-item">Stakeholder Engagement</span>
-                    <span class="skill-item">Data-Driven Decision Making</span>
-                    <span class="skill-item">Digital Transformation</span>
-                    <span class="skill-item">Market & Industry Research</span>
-                    <span class="skill-item">Process Optimisation</span>
-                    <span class="skill-item">Cross-Functional Collaboration</span>
+                    <span class="skill-item">React Native</span>
+                    <span class="skill-item">TypeScript</span>
+                    <span class="skill-item">Swift</span>
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">Express.js / Node.js</span>
+                    <span class="skill-item">REST API Design</span>
+                    <span class="skill-item">Supabase / PostgreSQL</span>
+                    <span class="skill-item">Google Cloud Platform</span>
+                    <span class="skill-item">CI/CD & Git Workflows</span>
+                    <span class="skill-item">System Architecture</span>
+                    <span class="skill-item">Integration Patterns</span>
+                    <span class="skill-item">Agile Development</span>
                 </div>
             </div>
             <div class="skill-category">
-                <h3>Technical & Analytical Skills</h3>
+                <h3>AI & Emerging Technologies</h3>
                 <div class="skills-list">
-                    <span class="skill-item">Advanced Excel</span>
-                    <span class="skill-item">SQL Fundamentals</span>
-                    <span class="skill-item">Data Interpretation</span>
-                    <span class="skill-item">Product & User Analytics</span>
-                    <span class="skill-item">Digital Platforms</span>
-                    <span class="skill-item">API-Driven Systems</span>
-                    <span class="skill-item">Agile Ways of Working</span>
-                    <span class="skill-item">Presentation & Reporting</span>
+                    <span class="skill-item">LLM Integration (Claude API)</span>
+                    <span class="skill-item">Google Gemini AI</span>
+                    <span class="skill-item">Voice AI (ElevenLabs / Vapi)</span>
+                    <span class="skill-item">Twilio Telephony</span>
+                    <span class="skill-item">Workflow Automation (n8n)</span>
+                    <span class="skill-item">Infrastructure-as-Code</span>
+                    <span class="skill-item">Observability & Monitoring</span>
+                    <span class="skill-item">Microservices Architecture</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Strategy & Business</h3>
+                <div class="skills-list">
+                    <span class="skill-item">Stakeholder Engagement</span>
+                    <span class="skill-item">Technical Roadmapping</span>
+                    <span class="skill-item">Digital Transformation</span>
+                    <span class="skill-item">Market & Competitive Analysis</span>
+                    <span class="skill-item">Data-Driven Decision Making</span>
+                    <span class="skill-item">Cross-Functional Collaboration</span>
+                    <span class="skill-item">Strategic Recommendations</span>
+                    <span class="skill-item">Business-Technology Alignment</span>
                 </div>
             </div>
         </div>
@@ -517,7 +539,7 @@
 </main>
 
 <footer>
-    <p>&copy; 2025 Atamert Peker. All rights reserved.</p>
+    <p>&copy; 2026 Atamert Peker. All rights reserved.</p>
 </footer>
 
 </body>
