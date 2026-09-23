@@ -1,0 +1,5 @@
+
+# IDE ayarlari (makineye ozel)
+.idea/
+.vscode/
+.DS_Store
